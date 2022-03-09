@@ -1,4 +1,5 @@
 #!/bin/bash
+<<<<<<< HEAD
 
 #Initialize our digits and sum return variables
 first_digit=0
@@ -30,3 +31,5 @@ done
 
 #Display our sum
 echo $sum
+=======
+>>>>>>> 3ab809d10e9f44d9282d83915dee70f0b3e97481
