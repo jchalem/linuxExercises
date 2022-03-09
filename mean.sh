@@ -13,18 +13,18 @@ function mean {
             skip=1
 	else
 	    x=$(echo $line | cut -d "," -f $col)
-	    total=$(($total+$x))
+	    total=$(echo "scale=2; $total+$x" | bc)
 	    ((count++))
 	fi
     done < $file
     
-    avg=$(($total/$count))
+    avg=$(echo "scale=2; $total/$count" | bc)
     echo $avg
 }
 
 if (( $# == 1 )); then
-    file="mtcars.csv"
-    mean $1 $file
+    echo $(</dev/stdin) >> custom.csv
+    mean $1 "custom.csv"
 elif (( $# == 2 )); then
     mean $1 $2
 else
